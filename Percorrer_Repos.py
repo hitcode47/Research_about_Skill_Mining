@@ -18,7 +18,7 @@ def buscar_repositorios(data, header):
         print("Erro: %d" %repositorios.status_code)
     return repositorios
 
-def varrer_repositorios(repositorios, header):
+def varrer_repositorios(repositorios):
     for repo in repositorios: 
         dados_link = requests.get(repo['languages_url'], headers=header)
         
