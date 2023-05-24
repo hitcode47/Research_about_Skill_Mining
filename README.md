@@ -30,7 +30,8 @@ A small project about skill mining of the Github users. This project is part of 
 
   * Liguagem de atuação predominante
   * Horário de atuação predominante
-  * Elaborar documentação 
+
+5 Elaborar documentação 
 
 *Relatório de estudo semanal*
 
