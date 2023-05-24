@@ -31,9 +31,15 @@ def varrer_repositorios(repositorios):
      
 def listar_linguagens(dados):
     soma_linguagens = {}
+    somatorio = sum(dados.values())
+    
     for language, valor in dados.items():
         if language in soma_linguagens:
             soma_linguagens[language] += valor
         else:
             soma_linguagens[language] = valor
+            
+    for language, valor in soma_linguagens.items():
+        percentual = (valor/somatorio)*100
+        soma_de_linguagens[language] = [valor, f'valor percentual = {percentual}%']
     return soma_linguagens

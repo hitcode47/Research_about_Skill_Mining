@@ -1,8 +1,9 @@
 import json
 import requests
 from Formador_de_arquivo import gerar_arquivo_de_dados
-    
-url = "https://api.github.com/users/CViniciusSDias"
+
+Nome_usuario = input('inserir nome do usuario a ter dados analisados: ')
+url = f"https://api.github.com/users/{Nome_usuario}"
 header = {
     'Authorization': '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',
     "Accept": "application/vnd.github.v3+json"
