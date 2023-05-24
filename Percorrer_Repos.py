@@ -5,12 +5,10 @@ header = {
 }
 def soma_de_linguagens(data):
     
-    buscar_repositorios()
-    varrer_repositorios(buscar_repositorios())
-    listar_linguagens(varrer_repositorios())
+    listar_linguagens(varrer_repositorios(buscar_repositorios(data)))
     
-def buscar_repositorios(data, header):
-    repositorios = requests.get(data['repos_url'], headers=header)
+def buscar_repositorios(_data):
+    repositorios = requests.get(_data['repos_url'], headers=header)
     if repositorios.status_code == 200:
         repositorios = repositorios.json()
     else:
