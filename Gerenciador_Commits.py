@@ -7,13 +7,13 @@ header = {
 def commit_Por_Nome(Data):
     
     _repositorio = requisitar_repositorio(Data)
-    varrer_repositorio_de_commits(_repositorio)
+    return varrer_repositorio_de_commits(_repositorio)
 
     
 def requisitar_repositorio(Data):
     response = requests.get(Data['repos_url'], headers=header)
     if response.status_code == 200:
-        repositorios = json.load(repositorios)
+        repositorios = repositorios.json()
     else:
         print("Erro na camada de repositorio - Gerenciador de commits ")
         print("Erro: %d" %response.status_code)
@@ -24,7 +24,7 @@ def varrer_repositorio_de_commits(repositorios):
     for repo in repositorios:
         repo_response = requests.get(repo['commits_url'], headers=header)
         if repo_response.status_code == 200:
-            repos_commits = json.load(repos_commits)
+            repos_commits = repos_commits.json()
         else:
             print ("Erro na camade de repositorio de commits")
             print("Erro: %d" %repo_response.status_code)
