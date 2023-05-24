@@ -1,3 +1,4 @@
+import json
 import requests
 header = {
 'Authorization' : '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',
@@ -21,7 +22,7 @@ def varrer_repositorios(repositorios):
         dados_link = requests.get(repo['languages_url'], headers=header)
         
         if dados_link.status_code == 200:
-            dados = dados_link.json()
+            dados = json.loads(dados)
         else:
             print("Erro na camada de dados.link")
             print("Erro: %d" %dados_link.status_code)
