@@ -8,17 +8,17 @@ def soma_de_linguagens(data):
     
     _repositorio = buscar_repositorios(data)
     _dados = varrer_repositorios(_repositorio)
-    _soma_final = listar_linguagens(_dados)
-    return _soma_final
+    return listar_linguagens(_dados)
+    
 
 def buscar_repositorios(Par_data):
     repositorios = {}
     response = requests.get(Par_data['repos_url'], headers=header)
     if response.status_code == 200:
-        repositorios = response.json()
+       repositorios = response.json()
     else:
-        print("Erro na camada de de repositorios")
-        print("Erro: %d" %response.status_code)
+       print("Erro na camada de de repositorios")
+       print("Erro: %d" %response.status_code)
         
     return repositorios
 
@@ -28,7 +28,7 @@ def varrer_repositorios(Par_repositorio):
         dados_link = requests.get(repo['languages_url'], headers=header)
         
         if dados_link.status_code == 200:
-            dados = dados_link.json()
+           dados = dados_link.json()
         else:
             print("Erro na camada de dados.link")
             print("Erro: %d" %dados_link.status_code)
@@ -41,12 +41,13 @@ def listar_linguagens(Par_dados):
     
     for language, valor in Par_dados.items():
         if language in soma_linguagens:
-            soma_linguagens[language] += valor
+           soma_linguagens[language] += valor
         else:
-            soma_linguagens[language] = valor
+           soma_linguagens[language] = valor
             
     for language, valor in soma_linguagens.items():
         percentual = (valor/somatorio)*100
         percentual = round(percentual, 2)
-        soma_linguagens[language] = [valor, f"valor percentual = {percentual}%"]
+        soma_linguagens[language] = [f"valor em bytes: {valor}", 
+                                     f"valor percentual em relação ao total: {percentual}%"]
     return soma_linguagens
