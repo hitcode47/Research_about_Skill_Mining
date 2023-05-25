@@ -6,9 +6,9 @@ header = {
 
 def soma_de_linguagens(data):
     
-    _repositorio = buscar_repositorios(data)
-    _dados = varrer_repositorios(_repositorio)
-    return listar_linguagens(_dados)
+    Repositorio = buscar_repositorios(data)
+    Dado = varrer_repositorios(Repositorio)
+    return listar_linguagens(Dado)
     
 
 def buscar_repositorios(Par_data):
@@ -38,6 +38,8 @@ def varrer_repositorios(Par_repositorio):
 def listar_linguagens(Par_dados):
     soma_linguagens = {}
     somatorio = sum(Par_dados.values())
+    Valor_max = max(Par_dados) 
+    multiplicador_percentual = 100
     
     for language, valor in Par_dados.items():
         if language in soma_linguagens:
@@ -46,8 +48,9 @@ def listar_linguagens(Par_dados):
            soma_linguagens[language] = valor
             
     for language, valor in soma_linguagens.items():
-        percentual = (valor/somatorio)*100
+        percentual = (valor/somatorio)*multiplicador_percentual
         percentual = round(percentual, 2)
         soma_linguagens[language] = [f"valor em bytes: {valor}", 
                                      f"valor percentual em relação ao total: {percentual}%"]
+    soma_linguagens["Linguagem mais utilizada"] = Valor_max
     return soma_linguagens

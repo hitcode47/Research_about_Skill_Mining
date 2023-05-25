@@ -26,8 +26,6 @@ def varrer_repositorio_de_commits(repositorios):
            print ("Erro na camade de repositorio de commits")
            print("Erro: %d" %repo_response.status_code)
            break
-        
-        
         for repo_commit in repos_commits:
             if repo_commit['commit'] != None:
                Commit_Por_Repositorio[repo['name']] += 1

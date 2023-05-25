@@ -10,7 +10,7 @@ A small project about skill mining of the Github users. This project is part of 
 
   * first user: hitcode47 - Bruno dos Santos Lopes (perfil de pequeno porte - *para testes iniciais*)
 
-  * second user: jesimonbarreto - Amigo pessoal  (perfil de porte médio - *Adaptação pacotes maiores de dados*)
+  * second user: jesimonbarreto - Amigo (perfil de porte médio - *Adaptação pacotes maiores de dados*)
   
   * third user: CViniciusSDias - Professor do Alura (perfil de grande porte - verificação de desempenho para grandes quantidades de dados)
 
@@ -28,13 +28,19 @@ A small project about skill mining of the Github users. This project is part of 
  
 4 Objetivos:
 
-  * Definir Liguagem de programação predominante no perfil analisado
+  * Definir Liguagem de programação predominante no perfil analisado ****ok****
   * Horário de atuação predominante
   * Salvar os dodos em arquivos separados por nome ****ok****
 
-5 Elaborar documentação
+5 Elaborar documentação:
  
   * PEP 8 – Style Guide for Python Code
+  * PEP 257 – Convenções Docstring
+
+6 Problemas:
+
+  * Marcações hexadecimais no arquivo de retorno
+  * Arquivo gerador de commits não gera valores
 
 *Relatório de estudo semanal*
 
@@ -42,10 +48,12 @@ questões abertas:
   * Como acessar APIs do github em seu potencial total de informação?
   * Como requisitar em camadas mais profundas dentro das APIs?
   * Como selecionar dados?
-  * Como encontrar as APIs?
+  
 
-  * Respostas às perguntas anteriores 7/05/2023
+  #Respostas:
 
-  * As APIs estão sujeitas a critérios de privacidade do servidor. Logo, o potencial de acesso é tão grande quanto o servidor permite.
+  * As requisções aos serviços de APIs possuem um limite de acordo com as definições estabelecidas pelo servidores. Para aumentar o limite de requisições, uma alternativa é criar um token de acesso. Além disso, APIs estão sujeitas a critérios de privacidade do servidor. Logo, o potencial de acesso é tão grande quanto o servidor permite ou o quanto os usuários disponibilizam ao público.
 
-  * Aparentemente a API rest do github funciona em uma estrutura de camadas de link. Muito provavelmente seja possível realizar localização de dados por requisição em cadeia.
+  * Aparentemente a API rest do github funciona em uma estrutura de camadas de link http. Muito provavelmente seja possível realizar localização de dados por requisição em cadeia.
+
+
