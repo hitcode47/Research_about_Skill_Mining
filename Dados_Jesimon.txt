@@ -1,0 +1,55 @@
+{
+    "Dados Pessoais": {
+        "Nome": "Jesimon Barreto",
+        "Numero de Repositorios": 22,
+        "Endereço": null,
+        "Bio": null
+    },
+    "Atividade de cada linguagem em bytes": {
+        "C": [
+            "valor em bytes: 7124",
+            "valor percentual em relação ao total: 1.67%"
+        ],
+        "Makefile": [
+            "valor em bytes: 575",
+            "valor percentual em relação ao total: 0.13%"
+        ],
+        "Python": [
+            "valor em bytes: 16264",
+            "valor percentual em relação ao total: 3.82%"
+        ],
+        "Assembly": [
+            "valor em bytes: 1477",
+            "valor percentual em relação ao total: 0.35%"
+        ],
+        "Jupyter Notebook": [
+            "valor em bytes: 247643",
+            "valor percentual em relação ao total: 58.13%"
+        ],
+        "Java": [
+            "valor em bytes: 59457",
+            "valor percentual em relação ao total: 13.96%"
+        ],
+        "TeX": [
+            "valor em bytes: 71626",
+            "valor percentual em relação ao total: 16.81%"
+        ],
+        "HTML": [
+            "valor em bytes: 2648",
+            "valor percentual em relação ao total: 0.62%"
+        ],
+        "CSS": [
+            "valor em bytes: 672",
+            "valor percentual em relação ao total: 0.16%"
+        ],
+        "C++": [
+            "valor em bytes: 18309",
+            "valor percentual em relação ao total: 4.3%"
+        ],
+        "Shell": [
+            "valor em bytes: 251",
+            "valor percentual em relação ao total: 0.06%"
+        ],
+        "Linguagem mais utilizada": "TeX"
+    }
+}

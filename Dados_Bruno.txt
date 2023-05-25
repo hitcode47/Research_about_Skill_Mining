@@ -1,0 +1,27 @@
+{
+    "Dados Pessoais": {
+        "Nome": null,
+        "Numero de Repositorios": 3,
+        "Endereço": null,
+        "Bio": null
+    },
+    "Atividade de cada linguagem em bytes": {
+        "JavaScript": [
+            "valor em bytes: 2495",
+            "valor percentual em relação ao total: 32.42%"
+        ],
+        "Python": [
+            "valor em bytes: 4830",
+            "valor percentual em relação ao total: 62.77%"
+        ],
+        "HTML": [
+            "valor em bytes: 263",
+            "valor percentual em relação ao total: 3.42%"
+        ],
+        "C++": [
+            "valor em bytes: 107",
+            "valor percentual em relação ao total: 1.39%"
+        ],
+        "Linguagem mais utilizada": "Python"
+    }
+}
