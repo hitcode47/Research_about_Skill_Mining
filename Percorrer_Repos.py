@@ -12,6 +12,11 @@ def soma_de_linguagens(data):
     
 
 def buscar_repositorios(Par_data):
+    """
+    -Recebe a camada inicial ofertada pela API Rest do Github.
+    -Entra na camada de repositório.
+    -Retorna a camada com repositórios. 
+    """
     repositorios = {}
     response = requests.get(Par_data['repos_url'], headers=header)
     if response.status_code == 200:
@@ -23,24 +28,31 @@ def buscar_repositorios(Par_data):
     return repositorios
 
 def varrer_repositorios(Par_repositorio):
+    """
+    -Recebe o dados da função Buscar_repositorio()
+    -Acessa a camada de Bytes por linguagem
+    -Cria dicionario com cada linguagem e a quantidade de dados enviados
+    -Retorna dicionario de Bytes/linguagens
+    """
     dados = {}
+    dados_link = {}
     for repo in Par_repositorio: 
         dados_link = requests.get(repo['languages_url'], headers=header)
         
         if dados_link.status_code == 200:
-           dados = dados_link.json()
+           dados_repo = dados_link.json()
+           dados.update(dados_repo)
         else:
             print("Erro na camada de dados.link")
             print("Erro: %d" %dados_link.status_code)
-            break
-    return dados    
+            break 
+    return dados
      
 def listar_linguagens(Par_dados):
     soma_linguagens = {}
     somatorio = sum(Par_dados.values())
     Valor_max = max(Par_dados) 
     multiplicador_percentual = 100
-    
     for language, valor in Par_dados.items():
         if language in soma_linguagens:
            soma_linguagens[language] += valor
