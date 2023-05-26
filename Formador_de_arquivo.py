@@ -5,7 +5,7 @@ import Gerenciador_Commits
 
 def gerar_arquivo_de_dados(data):
     """
-    Estruturação de dados colhidos em formato de dicionários e armazenamento em arquivos.
+    Estruturação de dados colhidos em formato de dicionários e armazenamento em arquivos distintos.
     """
     Dados = {
        "Dados Pessoais" : Generator_arq.gerar_dados_pessoais(data),
