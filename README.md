@@ -19,7 +19,7 @@ A small project about skill mining of the Github users. This project is part of 
 
   * Dados do usuário ****ok****
   * Quantidade de repositórios ****ok****
-  * Numero de Commit em cada repositório ...
+  * Numero de Commit em cada repositório 
   * tipos de linguagem usadas ****ok****
   * Quantidade de bytes commitado por linguagem usadas ****ok****
   * Percentual de atividade para cada linguagem ****ok****
