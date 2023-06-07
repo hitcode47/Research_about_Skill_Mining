@@ -1,11 +1,20 @@
 import requests
+import time
 header = {
     'Authorization': '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',
     'Accept': 'application/vnd.github.v3+json'
 }
 def commit_Por_Nome(Data):
-    _repositorio = requisitar_repositorio(Data)
-    return varrer_repositorio_de_commits(_repositorio)
+   try:
+       _repositorio = requisitar_repositorio(Data)
+   except requests.exceptions.RequestException:
+       time.sleep(7200)
+       _repositorio = requisitar_repositorio(Data) 
+   try: 
+      return varrer_repositorio_de_commits(_repositorio)
+   except requests.exceptions.RequestException:
+      time.sleep(7200)
+      return varrer_repositorio_de_commits(_repositorio)
 
 def requisitar_repositorio(Data):
     response = requests.get(Data['repos_url'], headers=header)

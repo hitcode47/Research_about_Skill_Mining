@@ -1,13 +1,23 @@
 import requests
+import time
 header = {
 'Authorization' : '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',
 "Accept": "application/vnd.github.v3+json"
 }
 
 def soma_de_linguagens(data):
+    try:
+        Repositorio = buscar_repositorios(data)
+    except requests.exceptions.RequestException:
+        time.sleep(7200)
+        Repositorio = buscar_repositorios(data)
+        
+    try:
+        Dado = varrer_repositorios(Repositorio)
+    except requests.exceptions.RequestException:
+        time.sleep(7200)
+        Dado = varrer_repositorios(Repositorio)
     
-    Repositorio = buscar_repositorios(data)
-    Dado = varrer_repositorios(Repositorio)
     return listar_linguagens(Dado)
     
 
