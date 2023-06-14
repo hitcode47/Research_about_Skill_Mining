@@ -10,11 +10,11 @@ header = {
     'Authorization': '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',
     'Accept': 'application/vnd.github.v3+json',
 }
-Response = requests.get(url, headers=header)
-if Response.status_code == 200:
-   Data_user = Response.json()
-   gerar_arquivo_de_dados(Data_user)
+response = requests.get(url, headers=header)
+if response.status_code == 200:
+   data_user = response.json()
+   gerar_arquivo_de_dados(data_user)
     
 else:
    print("Erro de requisição")
-   print("Erro: %d" %Response.status_code)
+   print("Erro: %d" %response.status_code)

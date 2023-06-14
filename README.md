@@ -57,3 +57,11 @@ questões abertas:
   * Aparentemente a API rest do github funciona em uma estrutura de camadas de link http. Muito provavelmente seja possível realizar localização de dados por requisição em cadeia.
 
 
+Uso do Sonarlint
+{
+  1° Exigiu alterações de nomes de variáveis{
+    snake_case --> variáveis e métodos
+    CamelCase --> classes 
+
+  }
+}
