@@ -1,13 +1,22 @@
-def gerar_dados_pessoais(data): 
+"""
+Este módulo realiza o recolhimento de informações básicas do usuário para
+formar o cabeçalho do arquivo.
+"""
+def gerar_dados_pessoais(data):
     """
-    Recolhimento das informações de usuário.
-    """    
+    Gera dados pessoais a partir dos dados fornecidos.
+
+    Parâmetros:
+    - data: um dicionário contendo informações sobre o usuário.
+
+    Retorna:
+    - Um dicionário contendo os dados pessoais gerados.
+    """
     dados = {
         "Nome" : data['name'],
         "Numero de Repositorios" : data['public_repos'],
         "Endereço" : data['location'],
-        "Bio" : data['bio'],   
+        "Bio" : data['bio'],
     }
     return dados
         
-    
