@@ -1,11 +1,26 @@
+"""Módulo que soma o número de bytes por linguagem.
+
+Returns:
+    dict: dicionario com o nome de cada linguagem e sua respectiva quantidade em bytes.
+"""
 import time
 import requests
 header = {
-'Authorization' :'github_pat_11A7FEEZY02yM3K6OLmzlk_eXWaBbAVfr4q'
-                 '2nkC6bkIDAbmcBe1ETIqizTNTEOLPchORHRBXQYON8EHtFH',                 
-'Accept':'application/vnd.github.v3+json'
+'Authorization':
+    'github_pat_11A7FEEZY02yM3K6OLmzlk_eXWaBbAVfr4q'
+    '2nkC6bkIDAbmcBe1ETIqizTNTEOLPchORHRBXQYON8EHtFH',                 
+'Accept':
+    'application/vnd.github.v3+json'
 }
 def soma_de_linguagens(data):
+    """Executa as funções do módulo
+
+    Args:
+        data (dict): endpoint base da API rest do github
+
+    Returns:
+        dict: retorna o valor retornado pela função 'listar_linguagens()'.
+    """
     try:
         repositorio = buscar_repositorios(data)
     except requests.exceptions.RequestException:
@@ -19,10 +34,13 @@ def soma_de_linguagens(data):
     return listar_linguagens(dado)
 
 def buscar_repositorios(parametro_data):
-    """
-    -Recebe a camada inicial ofertada pela API Rest do Github.
-    -Entra na camada de repositório.
-    -Retorna a camada com repositórios. 
+    """Acessar a camada de repositório
+
+    Args:
+        data (dict): Endpoint base da API rest do github
+
+    Returns:
+        dict: Retorna todos os repositórios de um perfil
     """
     repositorios = {}
     response = requests.get(parametro_data['repos_url'], headers=header, timeout=5)
@@ -34,11 +52,13 @@ def buscar_repositorios(parametro_data):
     return repositorios
 
 def varrer_repositorios(parametro_repositorios):
-    """
-    -Recebe o dados da função Buscar_repositorio()
-    -Acessa a camada de Bytes por linguagem
-    -Cria dicionario com cada linguagem e a quantidade de dados enviados
-    -Retorna dicionario de Bytes/linguagens
+    """Acessa a camada linguagens de cada repositório
+
+    Args:
+        data (dict): Dicionário com todos repositórios de um usuario
+
+    Returns:
+        dict: Dicionário com todos todas as linguagens e suas respectivas quantidades de bytes.
     """
     dados = {}
     dados_link = {}
@@ -52,8 +72,17 @@ def varrer_repositorios(parametro_repositorios):
             print(f"Erro: {dados_link.status_code}")
             break
     return dados
-
 def listar_linguagens(parametro_de_dados):
+    """Soma a quantidade de bytes em linguagens de mesmo nome.
+
+    Args:
+        parametro_de_dados (_type_): dicionário com linguagens(nomes repetidos)
+        e sua respectiva quantidade de bytes.
+
+    Returns:
+        dict: numero de bytes por linguagens, valor percentual em relação ao todo
+        e linguagem mais utilizada. 
+    """
     soma_linguagens = {}
     somatorio = sum(parametro_de_dados.values())
     valor_maximo = max(parametro_de_dados)
