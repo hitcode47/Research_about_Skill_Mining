@@ -1,14 +1,16 @@
-import requests
-from formador_de_arquivo import gerar_arquivo_de_dados
 """
 Requisição da primeira camadade de dados da API rest do Github.
 """
+import requests
+from formador_de_arquivo import gerar_arquivo_de_dados
+
 URL = 'https://api.github.com/users/hitcode47'
 header = {
-    'Authorization': 'github_pat_11A7FEEZY02yM3K6OLmzlk_eXWaBbAVfr4q2nkC6'
-                     'bkIDAbmcBe1ETIqizTNTEOLPchORHRBXQYON8EHtFH',
-    'Accept': 'application/vnd.github.v3+json',
+    'Authorization': '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',
+    'Accept': 'application/vnd.github.v3+json'
 }
+"""Os dados requisitados são passados como parâmetro na funçã: gerar_arquivo_de_dados().
+"""
 response = requests.get(URL, headers=header, timeout = 5)
 if response.status_code == 200:
     data_user = response.json()

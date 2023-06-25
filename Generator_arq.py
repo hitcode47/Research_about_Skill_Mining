@@ -7,10 +7,10 @@ def gerar_dados_pessoais(data):
     Gera dados pessoais a partir dos dados fornecidos.
 
     Parâmetros:
-    - data: um dicionário contendo informações sobre o usuário.
+    dict: um dicionário contendo informações sobre o usuário.
 
     Retorna:
-    - Um dicionário contendo os dados pessoais gerados.
+    dict: Um dicionário contendo os dados pessoais gerados.
     """
     dados = {
         "Nome" : data['name'],

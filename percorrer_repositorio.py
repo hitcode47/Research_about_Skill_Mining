@@ -6,11 +6,8 @@ Returns:
 import time
 import requests
 header = {
-'Authorization':
-    'github_pat_11A7FEEZY02yM3K6OLmzlk_eXWaBbAVfr4q'
-    '2nkC6bkIDAbmcBe1ETIqizTNTEOLPchORHRBXQYON8EHtFH',                 
-'Accept':
-    'application/vnd.github.v3+json'
+'Authorization':'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',                 
+'Accept':'application/vnd.github.v3+json'
 }
 def soma_de_linguagens(data):
     """Executa as funções do módulo

@@ -10,8 +10,8 @@ def gerar_arquivo_de_dados(data):
     Estruturação de dados colhidos em formato de dicionários e armazenamento em arquivos distintos.
     """
     dados = {
-       "Dados Pessoais" : generator_arq.gerar_dados_pessoais(data),
-       "Atividade de cada linguagem em bytes" : percorrer_repositorio.soma_de_linguagens(data),
+      # "Dados Pessoais" : generator_arq.gerar_dados_pessoais(data),
+      # "Atividade de cada linguagem em bytes" : percorrer_repositorio.soma_de_linguagens(data),
        "Numero de Commits Por linguagem" : gerenciador_commits.commit_por_nome(data)
     }
     nome_do_arquivo = input('inserir nome do arquivo que irá armazenar os dados do usuário: ')
